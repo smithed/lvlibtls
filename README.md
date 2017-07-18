@@ -1,2 +1,11 @@
 # lvlibtls
 Light wrapper for libtls in libressl which lets labview easily interface with it
+
+The code for the wrapper dll is in lvlibtls.cpp and lvlibtls.h. These files can be compiled against a standard distribution of LibreSSL (windows builds and compilation source available from https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/, link against libssl-43.lib, libcrypto-41.lib and libtls-15.lib)and National Instruments LabVIEW (<LabVIEW>/cintools directory, labviewv.lib). Its a whopping 350 lines of code and should compile without difficulty. The code is a bit nicer due to C++ but it should be portable to plain C without much of a challenge -- you just need a queue implementation.
+
+None of the functions as provided is thread safe in any way, all the way up or down the call chain. At present it relies on dataflow for thread safety. This is because the ssl library can require a read or a write at any time due to handshaking or re-handshaking, so there is no way to split the interface up into a read half and a write half. They must be conducted in series. You could technically break up the read and write functions such that each thread unsafe part of the library has only 1 reader and 1 writer, but...
+
+An HTTPS implementation which goes against everything I said above is included. It will probably crash at some point, but doesn't through the magic of race conditions. At some point I'll improve it, but I wanted to try it out and make sure it could work with a normal browser (which it does, although for IE you have to turn on "insecure mode" to allow bad ciphers to be used).
+
+vs https://github.com/smithed/lvasynctls
+lvasynctls was my first attempt at this using boost asio. It works, but it slowly grew to be a complete mess due to (a) my ineptitude and (b) the impedence mismatch between asio's normal usage and my desired usage. That version also works, and it has more features (read exactly what is asked for rather than "some", thread safety, and IPv6 support) but its significantly slower (for a virtual machine running my code vs openssl trying to stream as fast as possible, I get about 80 MB/s with this library and 9-10 with lvasynctls). It used to be faster but it also used to crash a lot more :/
