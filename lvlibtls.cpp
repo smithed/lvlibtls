@@ -45,20 +45,21 @@ extern "C" {
 
 	LVLIBTLS_API void tlsFreeLvState(lvSocketContext * lvstate)
 	{
+		if (lvstate) {
+			while (!lvstate->fromTlstoNetQ.empty()) {
+				auto elem = lvstate->fromTlstoNetQ.front();
+				DSDisposeHandle(elem);
+				lvstate->fromTlstoNetQ.pop();
+			}
 
-		while (!lvstate->fromTlstoNetQ.empty()) {
-			auto elem = lvstate->fromTlstoNetQ.front();
-			DSDisposeHandle(elem);
-			lvstate->fromTlstoNetQ.pop();
+			while (!lvstate->toTlsfromNetQ.empty()) {
+				auto elem = lvstate->toTlsfromNetQ.front();
+				DSDisposeHandle(elem.s);
+				lvstate->toTlsfromNetQ.pop();
+			}
+
+			delete lvstate;
 		}
-
-		while (!lvstate->toTlsfromNetQ.empty()) {
-			auto elem = lvstate->toTlsfromNetQ.front();
-			DSDisposeHandle(elem.s);
-			lvstate->toTlsfromNetQ.pop();
-		}
-
-		delete lvstate;
 	}
 
 	LVLIBTLS_API MgErr lvLibReserve(InstanceDataPtr * i)

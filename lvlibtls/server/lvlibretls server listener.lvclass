@@ -109,4 +109,13 @@
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 	</Item>
+	<Item Name="Read server context.vi" Type="VI" URL="../Read server context.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">&amp;A#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%=!!!!"1!%!!!!&amp;5!)!!ZT:8*W:8)A9W^O&gt;'6Y&gt;!!!4E"Q!"Y!!#1C&lt;(:M;7*S:82M=S"T:8*W:8)A&lt;'FT&gt;'6O:8)O&lt;(:D&lt;'&amp;T=Q!!(GRW&lt;'FC=G6U&lt;(-A=W6S&gt;G6S)'RJ=X2F&lt;G6S)'^V&gt;!!!4%"Q!"Y!!#1C&lt;(:M;7*S:82M=S"T:8*W:8)A&lt;'FT&gt;'6O:8)O&lt;(:D&lt;'&amp;T=Q!!(7RW&lt;'FC=G6U&lt;(-A=W6S&gt;G6S)'RJ=X2F&lt;G6S)'FO!'%!]!!-!!!!!!!"!!)!!!!!!!!!!!!!!!!!!!!$!A!!?!!!!!!!!!!!!!!*!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!1!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">150994944</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">268967936</Property>
+	</Item>
 </LVClass>

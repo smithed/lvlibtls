@@ -10,6 +10,7 @@
 		<Property Name="IOScan.Priority" Type="UInt">9</Property>
 		<Property Name="IOScan.ReportModeConflict" Type="Bool">true</Property>
 		<Property Name="IOScan.StartEngineOnDeploy" Type="Bool">false</Property>
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">false</Property>
@@ -19,28 +20,6 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="lvlibtls" Type="Folder">
-			<Item Name="client" Type="Folder">
-				<Item Name="lvlibretls client socket.lvclass" Type="LVClass" URL="../lvlibtls/client/lvlibretls client socket.lvclass"/>
-			</Item>
-			<Item Name="context parent" Type="Folder">
-				<Item Name="lvlibretls configurable context.lvclass" Type="LVClass" URL="../lvlibtls/context parent/lvlibretls configurable context.lvclass"/>
-			</Item>
-			<Item Name="crypto digest" Type="Folder">
-				<Item Name="lvlibcrypto digest.lvclass" Type="LVClass" URL="../lvlibtls/crypto digest/lvlibcrypto digest.lvclass"/>
-			</Item>
-			<Item Name="server" Type="Folder">
-				<Item Name="lvlibretls server listener.lvclass" Type="LVClass" URL="../lvlibtls/server/lvlibretls server listener.lvclass"/>
-			</Item>
-			<Item Name="socket connection" Type="Folder">
-				<Item Name="lvlibretls connection.lvclass" Type="LVClass" URL="../lvlibtls/socket connection/lvlibretls connection.lvclass"/>
-			</Item>
-			<Item Name="libcrypto-41.dll" Type="Document" URL="../lvlibtls/libcrypto-41.dll"/>
-			<Item Name="libssl-43.dll" Type="Document" URL="../lvlibtls/libssl-43.dll"/>
-			<Item Name="libtls-15.dll" Type="Document" URL="../lvlibtls/libtls-15.dll"/>
-			<Item Name="lv tls dll.lvlib" Type="Library" URL="../lvlibtls/lv tls dll.lvlib"/>
-			<Item Name="lvlibtls.dll" Type="Document" URL="../lvlibtls/lvlibtls.dll"/>
-		</Item>
 		<Item Name="test" Type="Folder">
 			<Item Name="server hello world.vi" Type="VI" URL="../tests/server hello world.vi"/>
 			<Item Name="stupid get action.vi" Type="VI" URL="../tests/stupid get action.vi"/>
@@ -59,14 +38,11 @@
 			<Item Name="websocket upgrade handler.lvclass" Type="LVClass" URL="../websocket/websocket upgrade handler.lvclass"/>
 			<Item Name="websocket user plugin.lvclass" Type="LVClass" URL="../websocket/user plugin/websocket user plugin.lvclass"/>
 		</Item>
-		<Item Name="basic HTTP handler dataset.lvclass" Type="LVClass" URL="../HTTP handler dataset/basic HTTP handler dataset.lvclass"/>
-		<Item Name="Basic HTTP server.lvclass" Type="LVClass" URL="../HTTP server/Basic HTTP server.lvclass"/>
+		<Item Name="HTTPS handler dataset.lvclass" Type="LVClass" URL="../HTTP handler dataset/HTTPS handler dataset.lvclass"/>
+		<Item Name="Basic HTTPS server.lvclass" Type="LVClass" URL="../HTTP server/Basic HTTPS server.lvclass"/>
 		<Item Name="http headers.lvlib" Type="Library" URL="../HTTP headers/http headers.lvlib"/>
-		<Item Name="http responder.lvclass" Type="LVClass" URL="../HTTP responder/http responder.lvclass"/>
-		<Item Name="http tls handle content data.vi" Type="VI" URL="../TLS HTTP server/http tls handle content data.vi"/>
+		<Item Name="https responder.lvclass" Type="LVClass" URL="../HTTP responder/https responder.lvclass"/>
 		<Item Name="main.vi" Type="VI" URL="../main.vi"/>
-		<Item Name="TLS HTTP handler dataset.lvclass" Type="LVClass" URL="../TLS HTTP server/TLS handler dataset/TLS HTTP handler dataset.lvclass"/>
-		<Item Name="TLS HTTP server.lvclass" Type="LVClass" URL="../TLS HTTP server/TLS HTTP server.lvclass"/>
 		<Item Name="uniform resource locator.lvlib" Type="Library" URL="../URI/uniform resource locator.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -88,6 +64,10 @@
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="lv tls dll.lvlib" Type="Library" URL="../../lvlibtls/lv tls dll.lvlib"/>
+			<Item Name="lvlibretls configurable context.lvclass" Type="LVClass" URL="../../lvlibtls/context parent/lvlibretls configurable context.lvclass"/>
+			<Item Name="lvlibretls connection.lvclass" Type="LVClass" URL="../../lvlibtls/socket connection/lvlibretls connection.lvclass"/>
+			<Item Name="lvlibretls server listener.lvclass" Type="LVClass" URL="../../lvlibtls/server/lvlibretls server listener.lvclass"/>
 			<Item Name="websocket unmask data.vi" Type="VI" URL="../websocket/websocket unmask data.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">

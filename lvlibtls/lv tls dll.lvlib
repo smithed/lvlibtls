@@ -41,5 +41,8 @@
 		<Item Name="get output data from library.vi" Type="VI" URL="../get output data from library.vi"/>
 		<Item Name="provide input data to library.vi" Type="VI" URL="../provide input data to library.vi"/>
 	</Item>
+	<Item Name="add all digests.vi" Type="VI" URL="../add all digests.vi"/>
+	<Item Name="add all ciphers.vi" Type="VI" URL="../add all ciphers.vi"/>
 	<Item Name="tls library paths.vi" Type="VI" URL="../tls library paths.vi"/>
+	<Item Name="tls init.vi" Type="VI" URL="../tls init.vi"/>
 </Library>
